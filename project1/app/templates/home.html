@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME PAGE</title>
+<style>
+body{
+    background-image: url("../static/images/r1.png");
+    background-size: cover;
+}    
+a{
+    font-size: 40px;
+    color: rgb(222, 218, 213);
+    text-decoration: none;
+}
+a:hover{
+    color: rgb(226, 237, 23);
+}
+.main{
+    display: flex;
+    margin-top: 30px;
+}
+.admin{
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   border: 1px solid grey;
+   border-radius: 7px;
+   margin-left: 300px;
+   
+}
+.user{
+         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+         border: 1px solid grey;
+         border-radius: 7px;
+         margin-left: 350px;
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div class="admin">
+     <a href="{% url 'aregis' %}">Admin Page</a>
+    </div>
+
+    <div class="user">
+        <a href="{% url 'uregis' %}">User Page</a>
+    </div>
+
+    </div>
+    
+</body>
+</html>

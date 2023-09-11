@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> User Login</title>
+    <style>
+    body{
+        background-color: #344a72;
+        font-family: 'Roboto',sans-serif;
+    }
+    .login-box{
+        width: 380px;
+        height: 320px;
+        margin: auto;
+        background-color: white;
+        border-radius: 3px;
+        position: relative;
+        margin-top: 140px;
+    }
+    h1{
+        margin-top: 60px;
+        text-align: center;
+        padding-top: 8px;
+        color: #49c1a2;
+    }
+    form{
+        width: 300px;
+        margin-top: 40px;
+        margin-left: 35px;
+    }
+    form label{
+        display: flex;
+        margin-top: 17px;
+        font-size: 18px;
+    }
+    form input{
+        width: 100%;
+        padding: 7px;
+        border: none;
+        border: 1px solid grey;
+        border-radius: 6px;
+        outline: none;
+    }
+    button{
+        width: 320px;
+        height: 35px;
+        margin-top: 20px;
+        border: none;
+        background-color: #49c1a2;
+        color: white;
+        font-size: 18px;
+    }
+    p{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 15px;
+    }
+    .para2{
+        color: white;
+        font-size: 16px;
+    }
+    .para2 a{
+        color: red;
+    }
+
+</style>
+</head>
+<body>
+    <div class="login-box">
+    <h1>Login</h1>
+    <form action="{% url 'ulogin' %}" method="POST">
+        {% csrf_token %}
+        <label>Email</label>
+        <input type="email" name="email">
+        <label>Password</label>
+        <input type="password" name="pass">
+        <button type="submit" name="submit">Submit</button>
+    </form>
+    </div>
+    <p class="para2">Not have an account?<a href="{% url 'uregis' %}"> Sign up here</a></p>
+</body>
+</html>

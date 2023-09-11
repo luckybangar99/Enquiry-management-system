@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> User Registration Page</title>
+<style>
+body{
+    background-color: #a3c9c0;
+    font-family: 'Roboto',sans-serif;
+}
+.signup-box{
+    width: 400px;
+    height: 600px;
+    margin: auto;
+    background-color: white;
+    border-radius: 18px;
+}
+h1{
+    text-align: center;
+    padding-top: 8px;
+    color: #49c1a2;
+}
+h4,h3{
+    text-align: center;
+    color: tomato;
+}
+form{
+    width: 300px;
+    margin-left: 45px;
+    
+}
+form label{
+    display: flex;
+    margin-top: 17px;
+    font-size: 18px;
+}
+form input{
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid grey;
+    border-radius: 6px;
+    outline: none;
+}
+button{
+       width: 320px;
+        height: 35px;
+        margin-top: 20px;
+        border: none;
+        background-color: #49c1a2;
+        color: white;
+        font-size: 18px;
+}
+p{
+    text-align: center;
+    font-size: 15px;
+
+}
+.para2{
+    text-align: center;
+    color: rgb(219, 36, 36);
+    font-size: 15px;
+}
+.para2 a{
+    color: #49c1a2;
+}
+
+</style>
+</head>
+<body>
+    <div class="signup-box">
+        <h1>Admin Registration </h1>
+        <form action="{% url 'admindata' %}" method="POST" >
+            {% csrf_token %}
+       <label>First Name:</label>
+       <input type="text" value="" name="fname">
+       <label>Last Name:</label>
+       <input type="text" value="" name="lname">
+       <label>Contact</label>
+       <input type="text" value="" name="contact">
+       <label>Email</label>
+       <input type="text" value="" name="email">
+       <label>Password</label>
+       <input type="text" value="" name="password">
+       <label>Confirm Password</label>
+       <input type="text" value="" name="cpassword">
+       <button type="submit">Submit</button>
+    </form>
+    <h3>{{msg}}</h3>
+    <!--<p>By clicking the Sign up button,you agree to our <br>
+    <a href="#">Terms and Condition</a>and<a href="#">Policy Privacy</a>
+    </p>-->
+    <p class="para2"><a href="{% url 'alogin' %}">Login here</a></p>
+    </div>
+    
+</body>
+</html>
